@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>02 Directivas incluidas</title>
+    </head>
+    <body>
+        <main>
+            <h1 v-if="conectado">Estoy conectado.</h1>
+
+            <h2 v-if="edad < 18">No puedes entrar.</h2>
+            <h2 v-else-if="edad > 200">Eres inmortal.</h2>
+            <h2 v-else>Puedes entrar.</h2>
+
+            <template v-if="conectado">
+                <h3>Bienvenido David</h3>
+                <ul>
+                    <li>
+                        <a href="#">Mis datos</a>
+                        <a href="#">Mensaje</a>
+                        <a href="#">Salir</a>
+                    </li>
+                </ul>
+            </template>
+            <h4 v-else>No estas conectado</h4>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
