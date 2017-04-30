@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>11 Ajax con Axios</title>
+
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <main>
+            <img v-for="persona in personas"
+                 :src="persona.picture.thumbnail"
+                 :alt="persona.name.first">
+
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

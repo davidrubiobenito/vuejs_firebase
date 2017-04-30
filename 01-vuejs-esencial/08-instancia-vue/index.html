@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>08 Instancia Vue</title>
+    </head>
+    <body>
+        <main>
+
+            <h1 v-text="mensaje"></h1>
+            <button @click="alReves">Al revés</button>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <div id="app">
+            <h1> {{ mensaje }}</h1>
+        </div>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

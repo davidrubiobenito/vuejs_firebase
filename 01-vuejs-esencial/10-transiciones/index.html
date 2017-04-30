@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>10 Transiciones</title>
+
+        <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+
+        <style>
+            /* Transition */
+            .aparecer-enter{
+                opacity:0;
+            }
+            .aparecer-enter-active{
+                transition: opacity 1s;
+            }
+
+            .aparecer-leave-to{
+                opacity: 0;
+            }
+            .aparecer-leave-active{
+                transition: opacity 1s;
+            }
+
+            /* Animation */
+            .bote-enter-active {
+                animation: bote-in .5s;
+            }
+            .bote-leave-active {
+                animation: bote-out .5s;
+            }
+            @keyframes bote-in {
+                0% {
+                    transform: scale(0);
+                }
+                50% {
+                    transform: scale(1.5);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            @keyframes bote-out {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.5);
+                }
+                100% {
+                    transform: scale(0);
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <main>
+
+            <button @click="mostrar= !mostrar">Mostrar / Ocultar</button>
+
+            <!-- Transition -->
+            <transition name="aparecer" appear>
+                <h1 v-if="mostrar" v-text="mensajes.transicion"></h1>
+            </transition>
+
+            <!-- Animation -->
+            <transition name="bote">
+                <h2 v-if="mostrar"  v-text="mensajes.animacion"></h2>
+            </transition>
+
+            <!-- Animate.css-->
+            <transition name="animete.css" enter-active-class="animated rotateInUpLeft" leave-active-class="animated zoomOutUp">
+                <h2 v-if="mostrar"  v-text="mensajes.animationCustom"></h2>
+            </transition>
+
+            <!-- Transicione entre diferentes elementos -->
+            <transition name="aparecer" mode="out-in">
+                <h1 v-if="mostrar" v-text="mensajes.entreElementos" key="aparecer"></h1>
+                <h1 v-else key="ocultar">No hay mensaje</h1>
+            </transition>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

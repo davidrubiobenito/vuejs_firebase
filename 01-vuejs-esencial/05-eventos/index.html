@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>05 Eventos</title>
+    </head>
+    <body>
+        <main>
+            <ul>
+                <li v-for="tarea in tareas">
+                    {{ tarea }}
+                </li>
+            </ul>
+
+            <!-- Ejemplo 1
+            <input type="text" placeholder="Introduce tú tarea" v-model="nuevaTarea">
+            <input type="button" value="Enviar tarea" v-on:click="agregarTarea">
+            -->
+
+            <form v-on:submit.prevent="agregarTarea">
+                <input type="text" placeholder="Introduce tú tarea" v-model="nuevaTarea">
+                <input type="submit" value="Enviar tarea">
+            </form>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

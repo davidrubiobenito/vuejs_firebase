@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>06 Propiedad conmutada</title>
+    </head>
+    <body>
+        <main>
+
+            <h1> {{ mensajeAlReves }} </h1>
+            <h2> {{mensaje}} </h2>
+            <ul>
+                <li v-for="tarea in tareasConPrioridad">
+                <!--<li v-for="tarea in tareasPorAntiguedad">-->
+                    {{ tarea.titulo }}
+                </li>
+            </ul>
+
+            <form v-on:submit.prevent="agregarTarea">
+                <input type="text" placeholder="Introduce tú tarea" v-model="nuevaTarea">
+                <input type="submit" value="Enviar tarea">
+            </form>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

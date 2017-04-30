@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>01 Introduccion a componentes</title>
+
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <main>
+
+            <elegir-ganador :listado="personas" inline-template>
+                <div>
+                    <h1 v-if="ganador">El ganador es: {{ ganador }}</h1>
+                    <template v-else>
+                        <h1>Participantes</h1>
+                        <ul>
+                            <li v-for="persona in listado">{{ persona }}</li>
+                        </ul>
+                    </template>
+                    <button @click="elegirGanador">Elegir Ganador</button>
+                </div>
+            </elegir-ganador>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <!-- Con tag template :) -->
+<!--        <template id="elegir-ganador-template">
+            <div>
+                <h1 v-if="ganador">El ganador es: {{ ganador }}</h1>
+                <template v-else>
+                    <h1>Participantes</h1>
+                    <ul>
+                        <li v-for="persona in listado">{{ persona }}</li>
+                    </ul>
+                </template>
+                <button @click="elegirGanador">Elegir Ganador</button>
+            </div>
+        </template>-->
+
+        <!-- Con tag script :( -->
+<!--        <script type="text/template" id="elegir-ganador-template">
+            <div>
+                <h1 v-if="ganador">El ganador es: {{ ganador }}</h1>
+                <template v-else>
+                    <h1>Participantes</h1>
+                    <ul>
+                        <li v-for="persona in listado">{{ persona }}</li>
+                    </ul>
+                </template>
+                <button @click="elegirGanador">Elegir Ganador</button>
+
+            </div>
+        </script>-->
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>01 Introduccion a componentes</title>
+
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <main>
+
+<!--            <ul>
+                <li v-for="tarea in tareasAjax" v-text="tarea.title">
+
+                </li>
+            </ul>-->
+
+<!--            <h1>Tareas Ajax</h1>
+            <mis-tareas :tareas="tareasAjax"></mis-tareas>
+
+            <hr>
+
+            <h1>Tareas Locales</h1>
+            <mis-tareas :tareas="tareasLocales"></mis-tareas>
+
+            <hr>-->
+
+            <h1>Las Tareas</h1>
+            <mis-tareas></mis-tareas>
+
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
