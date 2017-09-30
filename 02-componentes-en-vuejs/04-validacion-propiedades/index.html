@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>04 Validacion de Propiedades</title>
+
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <main>
+            <candidato  v-for="candidato in candidatos"
+                        :nombre="candidato.name.first"
+                        :correoe="candidato.email"
+                        :imagen="candidato.picture.thumbnail"
+                        :location="candidato.location"
+            >
+
+            </candidato>
+
+            <pre>{{ $data }}</pre>
+        </main>
+
+        <template id="candidato-template">
+            <blockquote>
+                <img :src="imagen" aling="right">
+                <h1> {{ nombre }} </h1>
+                <h2> {{ correoe }} </h2>
+                <ul>
+                    <li v-for="(value, key, index) in location">
+                        {{ value }}
+                    </li>
+                </ul>
+                <hr>
+
+            </blockquote>
+        </template>
+
+
+        <script src="https://unpkg.com/vue@2.2.6"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
