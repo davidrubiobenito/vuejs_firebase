@@ -7,6 +7,8 @@ import UsuarioBio from './components/UsuarioBio.vue';
 import Contacto from './components/Contacto.vue';
 import NoEncontrado from './components/NoEncontrado.vue';
 
+import {store} from './store/store';
+
 export const routes = [
     {path: '/', component: Home, name: 'home'},
     {path: '/prueba', alias:'/otraprueba', redirect: {name: 'home'}, component: Home},
@@ -20,8 +22,12 @@ export const routes = [
             },
         ]
     },
-    // {path: '/contacto/:newsletter', component: Contacto, name: 'contacto', props: true} ,
-    {path: '/contacto/', component: Contacto, name: 'contacto', props: {newsletter: false} } ,
+    {
+        beforeEnter: ((to, from, next ) =>{
+            console.log('Acceso a ruta contacto');
+            next(store.state.auth);
+        }),
+        path: '/contacto/', component: Contacto, name: 'contacto', props: {newsletter: false} } ,
 
     // Siempre ponerla al final
     {path: '/*/', component: NoEncontrado} ,
