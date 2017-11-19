@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>05-firebase-actualizar</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div id="app">
+
+        <form @submit.prevent="enviarMensaje">
+            <textarea v-model="mensaje" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit" value="Enviar mensaje">
+        </form>
+
+        <hr>
+
+        <h1>Mensajes</h1>
+
+        <ul>
+            <li v-for="mensaje in mensajes">
+                <span contenteditable="true" @blur="editarMensaje($event, mensaje.key)">{{ mensaje.mensaje }}</span>
+                <small><i>{{ mensaje.username }}</i></small>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <!-- VUE JS -->
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <!-- FIREBASE -->
+    <!--<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>-->
+    <script src="js/firebase_462.js"></script>
+    <script src="js/firebaseConexion.js"></script>
+
+    <!-- VUE STAFF -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

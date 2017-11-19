@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>03-form-input-modifiers</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div id="app">
+
+        <h1>Formulario</h1>
+        <hr>
+
+        <form @submit.prevent="enviar" action="">
+
+            <!--<input type="text" v-model.lazy="formulario">-->
+            <br>
+            <!--<input type="number" v-model.lazy.number="formulario">-->
+            <br>
+            <input type="text" v-model.trim.lazy="formulario">
+            <input type="submit" value="Enviar">
+        </form>
+
+        <hr>
+        <pre>
+            {{$data}}
+        </pre>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

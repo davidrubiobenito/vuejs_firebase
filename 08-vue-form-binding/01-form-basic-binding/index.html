@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>01-form-basic-binding</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div id="app">
+
+        <h1>Fomulario</h1>
+        <form @submit.prevent="enviar">
+            <label for="nombre"> Nombre: </label>
+            <input id="nombre" name="nombre" type="text" v-model="criterios.nombre" required>
+
+            <label for="apelidos"> Apellidos: </label>
+            <input  id="apelidos" name="apellidos" type="text" v-model="criterios.apellidos" required>
+
+
+            <label for="consulta"> Consulta: </label>
+            <textarea rows="5" id="consulta" v-model="criterios.consulta"></textarea>
+
+            <input type="radio" id="si" value="Si" v-model="criterios.cliente">
+            <label for="si">Soy cliente</label>
+
+            <br>
+
+            <input type="radio" id="no" value="No" v-model="criterios.cliente">
+            <label for="no">No soy cliente</label>
+
+            <label for="conocio">¿Dónde nos conoció?</label>
+            <select name="conocio" id="conocio" v-model="criterios.conocio">
+                <option v-for="opcion in conocio" :value="opcion">{{opcion}}</option>
+            </select>
+
+            <br>
+
+            <input type="checkbox" id="acepto" v-model="criterios.acepta">
+            <label for="acepto">Acepto las condiciones</label>
+
+            <hr>
+
+            <input type="submit" value="Enviar" v-if="criterios.acepta">
+
+        </form>
+
+        <pre>
+            {{$data}}
+        </pre>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

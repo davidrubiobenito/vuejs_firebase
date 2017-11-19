@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>07-firebase-transactions</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div id="app">
+        <h1>Datos del usuario</h1>
+
+        <dl>
+            <dt><i>Username:</i></dt>
+            <dd><i>{{ datosPerfil.username }}</i></dd>
+            <dt><i>Ciudad:</i></dt>
+            <dd><i>{{ datosPerfil.ciudad }}</i></dd>
+            <dt><i>País:</i></dt>
+            <dd><i>{{ datosPerfil.pais }}</i></dd>
+            <dt><i>Likes:</i></dt>
+            <dd><i>{{ datosPerfil.likes }}</i></dd>
+            <button @click="actualizarLikes">Añadir like</button>
+        </dl>
+
+    </div>
+
+
+    <!-- VUE JS -->
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <!-- FIREBASE -->
+    <!--<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>-->
+    <script src="js/firebase_462.js"></script>
+    <script src="js/firebaseConexion.js"></script>
+
+    <!-- VUE STAFF -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

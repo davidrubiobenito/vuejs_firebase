@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>01-firebase-configuracion</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+</head>
+<body>
+    <div id="app">
+
+        <pre>
+            {{$data}}
+        </pre>
+
+    </div>
+    <!--<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>-->
+    <script src="js/firebase_462.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBPhrqnO0cDdsnZndA9IYtpRhvesuFp0-s",
+            authDomain: "curso-vue-firebase-57373.firebaseapp.com",
+            databaseURL: "https://curso-vue-firebase-57373.firebaseio.com",
+            projectId: "curso-vue-firebase-57373",
+            storageBucket: "curso-vue-firebase-57373.appspot.com",
+            messagingSenderId: "296786769631"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="https://unpkg.com/vue@2.2.6"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
